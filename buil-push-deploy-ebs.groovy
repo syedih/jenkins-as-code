@@ -43,8 +43,7 @@ pipeline{
         stage("Deploy To AWS ebs"){
             steps{
                 script{
-                    sh   'cd ElasticBeanstalk\n' +
-                          '. ./BuildAndDeployDockerEBs.sh'
+                    sh '. ./BuildAndDeployDockerEBs.sh'
 
                 }
             }
