@@ -13,7 +13,7 @@ pipeline{
         stage("Pull Code From github"){
             steps{
                 cleanWs()
-                    checkout([$class: 'GitSCM', branches: [[name: scripts_branch ]],
+                    checkout([$class: 'GitSCM', branches: [[name: 'master' ]],
                               userRemoteConfigs: [[
                                                           credentialsId: 'askmas_id',
                                                           url: 'https://github.com/askmas/tutorials1' ]]
