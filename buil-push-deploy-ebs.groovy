@@ -13,13 +13,11 @@ pipeline{
         stage("Pull Code From github"){
             steps{
                 cleanWs()
-                dir('scheduler-scripts'){
                     checkout([$class: 'GitSCM', branches: [[name: scripts_branch ]],
                               userRemoteConfigs: [[
                                                           credentialsId: 'askmas_id',
                                                           url: 'https://github.com/askmas/tutorials1' ]]
                     ])
-                }
 
             }
         }
