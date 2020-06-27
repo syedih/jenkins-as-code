@@ -1,8 +1,5 @@
 pipeline{
     agent any
-    tools {
-
-    }
     options {
         buildDiscarder(logRotator(numToKeepStr: '100', daysToKeepStr: '30'))
         disableConcurrentBuilds()
@@ -19,7 +16,7 @@ pipeline{
                 dir('scheduler-scripts'){
                     checkout([$class: 'GitSCM', branches: [[name: scripts_branch ]],
                               userRemoteConfigs: [[
-                                                          credentialsId: 'github_devops',
+                                                          credentialsId: 'askmas_id',
                                                           url: 'https://github.com/askmas/tutorials1' ]]
                     ])
                 }
