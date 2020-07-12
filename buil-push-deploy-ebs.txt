@@ -19,7 +19,7 @@ pipeline{
                     checkout([$class: 'GitSCM', branches: [[name: 'syedih1' ]],
                               userRemoteConfigs: [[
                                                           credentialsId: '035710d2-a9ca-4ffb-b3bc-7bb9e3ec9040',
-                                                          url: 'https://github.com/syedih/DockerLesson.git' ]]
+                                                          url: 'https://github.com/syedih/jenkins-as-code.git' ]]
                     ])
 
             }
