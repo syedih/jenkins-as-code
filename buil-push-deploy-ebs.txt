@@ -33,11 +33,13 @@ pipeline{
         }
 
         stage("Build Docker image"){
+            dir('docker_code')
+            {
             steps{
                 script{
-                    cd docker_code
                     docker.build registery
                 }
+            }
             }
         }
     }
