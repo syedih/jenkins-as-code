@@ -21,6 +21,13 @@ pipeline{
                                                           credentialsId: '035710d2-a9ca-4ffb-b3bc-7bb9e3ec9040',
                                                           url: 'https://github.com/syedih/jenkins-as-code.git' ]]
                     ])
+                    dir('docker_code') {
+                    checkout([$class: 'GitSCM', branches: [[name: 'master' ]],
+                              userRemoteConfigs: [[
+                                                          credentialsId: '035710d2-a9ca-4ffb-b3bc-7bb9e3ec9040',
+                                                          url: 'https://github.com/syedih/DockerLesson.git' ]]
+                    ])
+                    }
 
             }
         }
@@ -28,6 +35,7 @@ pipeline{
         stage("Build Docker image"){
             steps{
                 script{
+                    cd docker_code
                     docker.build registery
                 }
             }
