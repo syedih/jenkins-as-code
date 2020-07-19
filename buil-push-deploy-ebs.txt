@@ -18,13 +18,13 @@ pipeline{
                 cleanWs()
                     checkout([$class: 'GitSCM', branches: [[name: 'syedih1' ]],
                               userRemoteConfigs: [[
-                                                          credentialsId: '035710d2-a9ca-4ffb-b3bc-7bb9e3ec9040',
+                                                          credentialsId: '0b3e431b-e49a-4707-a619-e4445baf6ff3',
                                                           url: 'https://github.com/syedih/jenkins-as-code.git' ]]
                     ])
                     dir('docker_code') {
                     checkout([$class: 'GitSCM', branches: [[name: 'master' ]],
                               userRemoteConfigs: [[
-                                                          credentialsId: '035710d2-a9ca-4ffb-b3bc-7bb9e3ec9040',
+                                                          credentialsId: '0b3e431b-e49a-4707-a619-e4445baf6ff3',
                                                           url: 'https://github.com/syedih/DockerLesson.git' ]]
                     ])
                     }
